@@ -167,7 +167,34 @@ const fishingSpots = [
             { id: 408, name: "1x1x1 Fish", rarity: "secret", chance: 0.0009, price: 100000, emoji: "💠", spot: "angkasa" },
             { id: 409, name: "Elshark Gran Maja", rarity: "secret", chance: 0.0001, price: 1000000, emoji: "🎃", spot: "angkasa" }
         ]
-    }
+    },
+// 🌌 SPOT BRAINROT (NEW)
+{
+    id: 5,
+    name: "🧠 Brainrot",
+    background: "linear-gradient(135deg, #ff00ff, #00ffff, #ff00ff)",
+    color: "#ff00ff",
+    fishes: [
+        // BASIC (70% chance total) - 3 ikan
+        { id: 500, name: "emote 2juta", rarity: "basic", chance: 25, price: 69, emoji: "🗽", spot: "brainrot" },
+        { id: 501, name: "Sigma Male", rarity: "basic", chance: 25, price: 42, emoji: "😎", spot: "brainrot" },
+        { id: 502, name: "Money talks", rarity: "basic", chance: 20, price: 100, emoji: "💸", spot: "brainrot" },
+        
+        // LEGENDARY (20% chance total) - 3 ikan
+        { id: 503, name: "Hawk Tuah", rarity: "legendary", chance: 8, price: 420, emoji: "🌬️", spot: "brainrot" },
+        { id: 504, name: "boneca ambalabu", rarity: "legendary", chance: 7, price: 500, emoji: "🧸", spot: "brainrot" },
+        { id: 505, name: "Tung tung sahur", rarity: "legendary", chance: 5, price: 666, emoji: "🪵", spot: "brainrot" },
+        
+        // MYTHICAL (7% chance total) - 3 ikan
+        { id: 506, name: "Ambatukam", rarity: "mythical", chance: 3, price: 999, emoji: "🧑🏿‍🦱", spot: "brainrot" },
+        { id: 507, name: "Among Us", rarity: "mythical", chance: 2, price: 777, emoji: "ඞ", spot: "brainrot" },
+        { id: 508, name: "skibidi toilet", rarity: "mythical", chance: 2, price: 888, emoji: 🚽", spot: "brainrot" },
+        
+        // SECRET (3% chance total) - 2 ikan
+        { id: 509, name: "67", rarity: "secret", chance: 0.01, price: 6767, emoji: "6️⃣7️⃣", spot: "brainrot" },
+        { id: 510, name: "Dragon Canaloni", rarity: "secret", chance: 0.001, price: 9999, emoji: "🐦‍🔥", spot: "brainrot" }
+    ]
+}
 ];
 
 // ==================== WEATHER DATA ====================
