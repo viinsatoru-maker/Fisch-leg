@@ -1170,3 +1170,164 @@ body {
     80% { transform: translate(2px, 2px); }
     100% { transform: translate(0); }
 }
+/* ==================== SPOT CRYPTO STYLES ==================== */
+
+/* Efek untuk tombol spot Crypto */
+.spot-btn[data-spot="6"] {
+    background: linear-gradient(135deg, #F7931A, #4CAF50, #F7931A) !important;
+    background-size: 200% 200% !important;
+    animation: cryptoGradient 3s ease infinite;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid gold;
+    text-shadow: 0 0 5px rgba(255,215,0,0.5);
+}
+
+@keyframes cryptoGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.spot-btn[data-spot="6"]::after {
+    content: '₿';
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    font-size: 20px;
+    opacity: 0.3;
+    transform: rotate(15deg);
+    color: gold;
+}
+
+/* Efek untuk ikan Crypto */
+.item-card:has(.fish-emoji:contains("🐕")),
+.item-card:has(.fish-emoji:contains("🐕‍🦺")),
+.item-card:has(.fish-emoji:contains("🔋")),
+.item-card:has(.fish-emoji:contains("🌌")),
+.item-card:has(.fish-emoji:contains("🪙")),
+.item-card:has(.fish-emoji:contains("💎")),
+.item-card:has(.fish-emoji:contains("₿")) {
+    border: 2px solid #F7931A;
+    box-shadow: 0 0 15px rgba(247,147,26,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.item-card:has(.fish-emoji:contains("₿")) {
+    border-color: gold;
+    box-shadow: 0 0 30px gold;
+    animation: bitcoinPulse 2s infinite;
+}
+
+@keyframes bitcoinPulse {
+    0% { box-shadow: 0 0 20px gold; }
+    50% { box-shadow: 0 0 40px #F7931A; }
+    100% { box-shadow: 0 0 20px gold; }
+}
+
+/* Harga crypto naik turun kayak asli */
+.item-card:has(.fish-emoji:contains("🐕")) .item-price,
+.item-card:has(.fish-emoji:contains("🐕‍🦺")) .item-price {
+    animation: cryptoVolatility 3s infinite;
+    display: inline-block;
+}
+
+@keyframes cryptoVolatility {
+    0% { transform: translateY(0); color: #F7931A; }
+    25% { transform: translateY(-3px); color: #4CAF50; }
+    50% { transform: translateY(0); color: #F7931A; }
+    75% { transform: translateY(3px); color: #ff0000; }
+    100% { transform: translateY(0); color: #F7931A; }
+}
+
+/* Efek khusus Bitcoin */
+.item-card:has(.fish-emoji:contains("₿")) .item-name {
+    background: linear-gradient(135deg, #F7931A, gold, #F7931A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: bitcoinText 3s linear infinite;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@keyframes bitcoinText {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Efek chart crypto di background */
+.fishing-area:has(.spot-btn[data-spot="6"].active) .water {
+    background: linear-gradient( 
+        to bottom, 
+        transparent, 
+        rgba(247,147,26,0.3) 20%,
+        rgba(76,175,80,0.3) 40%,
+        rgba(247,147,26,0.3) 60%,
+        transparent 80%
+    );
+    animation: cryptoChart 5s infinite linear;
+}
+
+@keyframes cryptoChart {
+    0% { opacity: 0.5; transform: scaleY(1); }
+    25% { opacity: 1; transform: scaleY(1.5); }
+    50% { opacity: 0.5; transform: scaleY(1); }
+    75% { opacity: 0.8; transform: scaleY(1.3); }
+    100% { opacity: 0.5; transform: scaleY(1); }
+}
+
+/* Efek "to the moon" untuk Dogecoin */
+.item-card:has(.fish-emoji:contains("🐕")) {
+    position: relative;
+}
+
+.item-card:has(.fish-emoji:contains("🐕"))::after {
+    content: '🚀';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 20px;
+    animation: toTheMoon 2s infinite;
+    opacity: 0.7;
+}
+
+@keyframes toTheMoon {
+    0% { transform: translateY(0) rotate(-10deg); opacity: 0.7; }
+    50% { transform: translateY(-10px) rotate(10deg); opacity: 1; }
+    100% { transform: translateY(0) rotate(-10deg); opacity: 0.7; }
+}
+
+/* Efek lambang rupiah untuk Shiba */
+.item-card:has(.fish-emoji:contains("🐕‍🦺")) .item-price::before {
+    content: '📉';
+    margin-right: 5px;
+    animation: cryptoDown 2s infinite;
+    display: inline-block;
+}
+
+@keyframes cryptoDown {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Style untuk display luck di spot Crypto */
+.spot-btn[data-spot="6"].active ~ #luck-display {
+    border-color: #F7931A;
+    box-shadow: 0 0 20px rgba(247,147,26,0.3);
+}
+
+.spot-btn[data-spot="6"].active ~ #luck-display h4 {
+    color: #F7931A;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .spot-btn[data-spot="6"]::after {
+        font-size: 16px;
+        top: -5px;
+        right: -2px;
+    }
+}
