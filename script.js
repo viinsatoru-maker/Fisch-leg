@@ -608,7 +608,8 @@ let caughtSecretSpots = {
     kuil: false,
     laut: false,
     sungai: false,
-    angkasa: false
+    angkasa: false,
+    brainrot: false
 };
 
 // ==================== DOM ELEMENTS ====================
