@@ -194,6 +194,29 @@ const fishingSpots = [
         { id: 509, name: "67", rarity: "secret", chance: 0.01, price: 6767, emoji: "6️⃣7️⃣", spot: "brainrot" },
         { id: 510, name: "Dragon Canaloni", rarity: "secret", chance: 0.001, price: 9999, emoji: "🐦‍🔥", spot: "brainrot" }
     ]
+},
+// ₿ SPOT CRYPTO
+{
+    id: 6,
+    name: "₿ Crypto",
+    background: "linear-gradient(135deg, #F7931A, #4CAF50, #F7931A)",
+    color: "#F7931A",
+    fishes: [
+        // BASIC (50% chance total) - 2 ikan
+        { id: 600, name: "Dogecoin", rarity: "basic", chance: 35, price: 50, emoji: "🐕", spot: "crypto" },
+        { id: 601, name: "Shiba Inu", rarity: "basic", chance: 25, price: 100, emoji: "🐕‍🦺", spot: "crypto" },
+        
+        // LEGENDARY (35% chance total) - 2 ikan
+        { id: 602, name: "HypeLiquid", rarity: "legendary", chance: 10, price: 500, emoji: "🔋", spot: "crypto" },
+        { id: 603, name: "Solana", rarity: "legendary", chance: 10, price: 500, emoji: "🌌", spot: "crypto" },
+        
+        // MYTHICAL (14% chance total) - 2 ikan (saya naikkan chance biar balance)
+        { id: 604, name: "Binance Coin", rarity: "mythical", chance: 1, price: 3000, emoji: "🪙", spot: "crypto" },
+        { id: 605, name: "Ethereum", rarity: "mythical", chance: 1, price: 2500, emoji: "💎", spot: "crypto" },
+        
+        // SECRET (1% chance total) - 1 ikan (saya naikkan chance jadi 0.1% biar masuk akal)
+        { id: 606, name: "Bitcoin", rarity: "secret", chance: 0.01, price: 50000, emoji: "₿", spot: "crypto" }
+    ]
 }
 ];
 
