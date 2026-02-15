@@ -165,30 +165,30 @@ const fishingSpots = [
 // ==================== UPDATED: EQUIPMENT DATA WITH CUSTOM EMOJIS ====================
 const rods = [
     { id: 0, name: "Pancingan Bambu", luck: 1, price: 0, owned: true, emoji: "🎋" },
-    { id: 1, name: "Pancingan Besi", luck: 2, price: 350, owned: false, emoji: "⚙️" },
-    { id: 2, name: "Pancingan Emas", luck: 5, price: 700, owned: false, emoji: "🪙" },
-    { id: 3, name: "Pancingan Platinum", luck: 10, price: 1000, owned: false, emoji: "💎" },
-    { id: 4, name: "Pancingan Legendaris", luck: 20, price: 3000, owned: false, emoji: "🏆" },
+    { id: 1, name: "Pancingan Besi", luck: 2, price: 350, owned: false, emoji: "🥄" },
+    { id: 2, name: "Pancingan Emas", luck: 5, price: 700, owned: false, emoji: "✨️" },
+    { id: 3, name: "Pancingan Platinum", luck: 10, price: 1000, owned: false, emoji: "🪡" },
+    { id: 4, name: "Pancingan Legendaris", luck: 20, price: 3000, owned: false, emoji: "🗡" },
     { id: 5, name: "Pancingan Dragon", luck: 40, price: 6000, owned: false, emoji: "🐲" },
-    { id: 6, name: "Pancingan Cosmic", luck: 80, price: 10000, owned: false, emoji: "🌌" },
+    { id: 6, name: "Pancingan Cosmic", luck: 80, price: 10000, owned: false, emoji: "🌂" },
     { id: 7, name: "Element Rod", luck: 120, price: 0, owned: false, unlocked: false, special: true, emoji: "⚡" },
     { id: 8, name: "Trident Rod", luck: 200, price: 0, owned: false, unlocked: false, special: true, emoji: "🔱" },
     { id: 9, name: "Galaxy Sword Rod", luck: 404, price: 440044, owned: false, emoji: "⚔️" },
-    { id: 10, name: "Tyo Rod", luck: 999, price: 999999, owned: false, emoji: "👑" },
+    { id: 10, name: "Tyo Rod", luck: 999, price: 999999, owned: false, emoji: "🏹" },
     { id: 11, name: "1x1x1 Rod", luck: 1111, price: 0, owned: false, unlocked: false, special: true, emoji: "🪬" },
-    { id: 12, name: "GhostFinn Rod", luck: 10000, price: 0, owned: false, fromExchange: false, unlocked: false, emoji: "👻" }
+    { id: 12, name: "GhostFinn Rod", luck: 10000, price: 0, owned: false, fromExchange: false, unlocked: false, emoji: "⛓️‍💥" }
 ];
 
 const baits = [
-    { id: 0, name: "Umpan Biasa", luck: 1, price: 0, owned: true, emoji: "🪱" },
+    { id: 0, name: "Umpan Biasa", luck: 1, price: 0, owned: true, emoji: "💊" },
     { id: 1, name: "Umpan Cacing", luck: 1.5, price: 200, owned: false, emoji: "🪱" },
     { id: 2, name: "Umpan Udang", luck: 2, price: 300, owned: false, emoji: "🦐" },
     { id: 3, name: "Umpan Ikan Kecil", luck: 5, price: 600, owned: false, emoji: "🐟" },
     { id: 4, name: "Umpan Ajaib", luck: 7, price: 700, owned: false, emoji: "✨" },
     { id: 5, name: "Umpan Emas", luck: 15, price: 1500, owned: false, emoji: "🪙" },
-    { id: 6, name: "Umpan Dark Matter", luck: 111, price: 22222, owned: false, emoji: "⚫" },
+    { id: 6, name: "Umpan Dark Matter", luck: 111, price: 22222, owned: false, emoji: "🥏" },
     { id: 7, name: "Umpan Singularity", luck: 125, price: 30000, owned: false, emoji: "🌀" },
-    { id: 8, name: "Elshark Bait", luck: 150, price: 50000, owned: false, emoji: "🦈" }
+    { id: 8, name: "Elshark Bait", luck: 150, price: 50000, owned: false, emoji: "👑" }
 ];
 
 const potions = [
