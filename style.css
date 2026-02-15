@@ -1144,3 +1144,29 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Spot Brainrot - Efek RGB */
+.spot-btn[data-spot="5"] {
+    animation: rgbPulse 2s infinite;
+}
+
+@keyframes rgbPulse {
+    0% { background: #ff00ff; }
+    25% { background: #00ffff; }
+    50% { background: #ffff00; }
+    75% { background: #ff0000; }
+    100% { background: #ff00ff; }
+}
+
+/* Efek untuk ikan Brainrot */
+.item-card[data-spot="brainrot"] {
+    animation: brainrotGlitch 3s infinite;
+}
+
+@keyframes brainrotGlitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+}
