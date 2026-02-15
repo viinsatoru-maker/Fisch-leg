@@ -72,8 +72,8 @@ const gameData = {
 // ==================== VERSION CONTROL ====================
 const GAME_VERSIONS = {
     current: 2,
-    latest: 2,
-    releaseDate: "2024-01-20",
+    latest: 3,
+    releaseDate: "2026-02-16",
     features: {
         1: "🎣 Game dasar",
         2: "✨ Spot Brainrot & Crypto, Exchange Bitcoin",
