@@ -2911,7 +2911,8 @@ function loadGame() {
                 kuil: false,
                 laut: false,
                 sungai: false,
-                angkasa: false
+                angkasa: false,
+                brainrot: false
             };
         }
     } catch (error) {
