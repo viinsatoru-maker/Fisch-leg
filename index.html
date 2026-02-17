@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing Legend - Dengan Dungeon RPG & Token Exchange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="stats-bar">
+                <div class="stat">
+                    <span>💰</span>
+                    <span id="coins">500</span>
+                </div>
+                <div class="stat">
+                    <span>💎</span>
+                    <span id="diamonds">0</span>
+                </div>
+                <div class="stat">
+                    <span>⭐</span>
+                    <span id="level">1</span>
+                </div>
+                <div class="stat">
+                    <span>📊</span>
+                    <span id="exp">0/100</span>
+                </div>
+                <div class="stat" id="spot-display">
+                    <span>📍 Danau Biasa</span>
+                </div>
+                <div class="stat" id="weather-display">
+                    <span>☀️ Cerah</span>
+                </div>
+                <div class="stat" id="depth-display">
+                    <span>🌊 Permukaan</span>
+                </div>
+            </div>
+            
+            <div class="spot-buttons" id="spot-buttons">
+                <!-- Spot buttons akan diisi oleh JavaScript -->
+            </div>
+
+            <!-- Depth Buttons -->
+            <div class="depth-buttons" id="depth-buttons">
+                <!-- Depth buttons akan diisi oleh JavaScript -->
+            </div>
+            
+            <!-- Dungeon Button -->
+            <div style="text-align: center; margin-top: 10px;">
+                <button id="dungeon-menu-btn" class="dungeon-nav-btn">
+                    ⚔️ MASUK DUNGEON ⚔️
+                </button>
+            </div>
+        </header>
+
+        <!-- ==================== MAIN MENU (FISHING) ==================== -->
+        <div id="main-menu">
+            <!-- Main Game Area -->
+            <main class="main-content">
+                <div class="fishing-area">
+                    <div class="water" id="fish-display">
+                        <!-- Fish animation akan diisi oleh JavaScript -->
+                    </div>
+                    <div class="fishing-rod">
+                        <div class="rod"></div>
+                        <div class="fishing-line"></div>
+                        <div class="bobber"></div>
+                        <div class="hook"></div>
+                    </div>
+                    
+                    <!-- Minigame Indicator -->
+                    <div class="minigame-indicator" id="minigame-indicator" style="display: none;">
+                        <div class="indicator-target"></div>
+                        <div class="indicator-needle"></div>
+                    </div>
+                    
+                    <button class="fish-btn" id="fish-btn">🎣 Mancing!</button>
+                </div>
+
+                <div class="active-effects" id="active-effects">
+                    <!-- Active effects akan ditampilkan di sini -->
+                </div>
+            </main>
+
+            <!-- Navigation Tabs -->
+            <nav class="tabs">
+                <button class="tab active" data-tab="backpack">🎒 Backpack</button>
+                <button class="tab" data-tab="shop">🏪 Shop</button>
+                <button class="tab" data-tab="sell">💰 Sell</button>
+                <button class="tab" data-tab="gacha">🎰 Gacha</button>
+                <button class="tab" data-tab="quests">📜 Quests</button>
+                <button class="tab" data-tab="aquarium">🐠 Aquarium</button>
+                <button class="tab" data-tab="village">🏡 Village</button>
+                <button class="tab" data-tab="pets">🐕 Pets</button>
+                <button class="tab" data-tab="exchange">🔄 Exchange</button>
+                <button class="tab" data-tab="skills">🌳 Skills</button>
+                <button class="tab" data-tab="gamepass">🎟️ Gamepass</button>
+                <button class="tab" data-tab="rank">⚔️ Rank</button>
+                <button class="tab" data-tab="depth-gear">⚓ Depth Gear</button>
+                <button class="tab" data-tab="settings">⚙️ Settings</button>
+            </nav>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Backpack Tab -->
+                <div id="backpack" class="tab-pane active">
+                    <div class="inventory-controls">
+                        <input type="text" id="search-fish" placeholder="Cari ikan...">
+                        <button id="sort-rarity">📊 Sort Rarity</button>
+                        <button id="sort-price">💰 Sort Harga</button>
+                    </div>
+                    <div class="items-grid" id="backpack-items">
+                        <p class="empty-message">Belum ada ikan di backpack</p>
+                    </div>
+                </div>
+
+                <!-- Shop Tab -->
+                <div id="shop" class="tab-pane">
+                    <div class="shop-categories">
+                        <button class="category-btn active" data-category="rods">🎣 Rods</button>
+                        <button class="category-btn" data-category="baits">🪱 Baits</button>
+                        <button class="category-btn" data-category="potions">🧪 Potions</button>
+                        <button class="category-btn" data-category="upgrades">🏠 Upgrades</button>
+                    </div>
+                    <div class="items-grid" id="shop-items">
+                        <!-- Shop items akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Sell Tab -->
+                <div id="sell" class="tab-pane">
+                    <div class="sell-header">
+                        <h3>Total: <span id="sell-total">0</span> 🪙</h3>
+                        <div class="sell-buttons">
+                            <button id="sell-btn" disabled>💰 Jual Selected</button>
+                            <button id="sell-all-btn">📦 Jual Semua</button>
+                        </div>
+                    </div>
+                    <div class="auto-sell">
+                        <h4>⚡ Auto Sell:</h4>
+                        <label class="auto-sell-label">
+                            <input type="checkbox" id="auto-sell-basic"> Basic
+                        </label>
+                        <label class="auto-sell-label">
+                            <input type="checkbox" id="auto-sell-legendary"> Legendary
+                        </label>
+                    </div>
+                    <div class="items-grid" id="sell-items">
+                        <p class="empty-message">Tidak ada ikan untuk dijual</p>
+                    </div>
+                </div>
+
+                <!-- Gacha Tab -->
+                <div id="gacha" class="tab-pane">
+                    <div class="gacha-section">
+                        <button class="gacha-btn" id="gacha-btn">🎰 Spin Gacha (500 🪙)</button>
+                        <button class="gacha-btn" id="secret-gacha-btn" style="background: linear-gradient(45deg, #00FFFF, #FF00FF);">🎁 Gacha Ikan Secret (50 💎)</button>
+                        <button class="gacha-btn" id="crypto-gacha-btn" style="background: linear-gradient(45deg, #F7931A, #4CAF50);">🎰 Gacha Crypto (25 💎)</button>
+                        
+                        <!-- Luck Display -->
+                        <div id="luck-display"></div>
+                        
+                        <div class="gacha-stats">
+                            <p>Total Spins: <span id="total-spins">0</span></p>
+                            <p>Rods Obtained: <span id="rods-obtained">0</span>/<span id="total-rods">5</span></p>
+                            <p>Secret Gacha: <span id="secret-gacha-count">0</span></p>
+                            <p>Crypto Gacha: <span id="crypto-gacha-count">0</span></p>
+                        </div>
+                        
+                        <!-- Gacha Rewards List -->
+                        <div class="gacha-rewards-container">
+                            <h4>🎁 Gacha Rewards</h4>
+                            <div id="gacha-rewards"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quests Tab -->
+                <div id="quests" class="tab-pane">
+                    <div class="quests-list" id="quests-list"></div>
+                </div>
+
+                <!-- Aquarium Tab -->
+                <div id="aquarium" class="tab-pane">
+                    <div class="aquarium-stats">
+                        <p>Species Collected: <span id="species-count">0</span>/<span id="total-species">0</span> (<span id="collection-percent">0%</span>)</p>
+                    </div>
+                    <div class="fish-tanks">
+                        <div class="fish-tank" id="basic-tank">
+                            <h4>🐟 Basic Fish</h4>
+                        </div>
+                        <div class="fish-tank" id="legendary-tank">
+                            <h4>✨ Legendary Fish</h4>
+                        </div>
+                        <div class="fish-tank" id="mythical-tank">
+                            <h4>🌟 Mythical Fish</h4>
+                        </div>
+                        <div class="fish-tank" id="secret-tank">
+                            <h4>💫 Secret Fish</h4>
+                        </div>
+                        <div class="fish-tank" id="special-tank">
+                            <h4>🎭 Special Fish</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Village Tab -->
+                <div id="village" class="tab-pane">
+                    <div class="village-stats">
+                        <p>🏠 Hut Level: <span id="hut-level">1</span></p>
+                        <p>👥 Assistants: <span id="assistant-count">0</span>/3</p>
+                    </div>
+                    <div class="upgrades-grid" id="village-upgrades"></div>
+                </div>
+
+                <!-- Pets Tab -->
+                <div id="pets" class="tab-pane">
+                    <div class="pets-header">
+                        <h3>🐕 Peliharaanmu</h3>
+                        <div class="active-pet" id="active-pet-display">
+                            <span id="active-pet-name">Tidak ada pet aktif</span>
+                        </div>
+                    </div>
+                    <div class="pets-shop" id="pet-shop-items"></div>
+                </div>
+
+                <!-- Exchange Tab -->
+                <div id="exchange" class="tab-pane">
+                    <div class="exchange-header">
+                        <h3>🔄 Exchange Center</h3>
+                        <p class="exchange-desc">Tukarkan ikan-ikan langkamu dengan hadiah spesial!</p>
+                    </div>
+                    <div class="exchange-items" id="exchange-items"></div>
+                </div>
+
+                <!-- Skills Tab -->
+                <div id="skills" class="tab-pane">
+                    <div class="skills-header">
+                        <h3>🌳 Skill Tree</h3>
+                        <p class="skills-desc">Tingkatkan kemampuan memancingmu!</p>
+                    </div>
+                    <div class="skill-tree" id="skill-tree"></div>
+                </div>
+
+                <!-- Gamepass Tab -->
+                <div id="gamepass" class="tab-pane">
+                    <div class="gamepass-container" id="gamepass-container"></div>
+                </div>
+
+                <!-- Rank Battle Tab -->
+                <div id="rank" class="tab-pane">
+                    <div class="rank-container" id="rank-battle"></div>
+                </div>
+
+                <!-- Depth Gear Tab -->
+                <div id="depth-gear" class="tab-pane">
+                    <div class="depth-gear-container">
+                        <h3>⚓ Perlengkapan Kedalaman</h3>
+                        <p class="exchange-desc">Beli gear untuk bisa memancing di kedalaman yang lebih dalam!</p>
+                        <div class="items-grid" id="depth-gear-items"></div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab (DENGAN TOMBOL UPDATE) -->
+                <div id="settings" class="tab-pane">
+                    <div class="settings-section">
+                        <h3>🎮 Game Settings</h3>
+                        <label class="setting-label">
+                            <input type="checkbox" id="animations" checked> Animations
+                        </label>
+                        <label class="setting-label">
+                            <input type="checkbox" id="notifications" checked> Notifications
+                        </label>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <h3>💾 Save Management</h3>
+                        <button id="export-save" class="settings-btn">📤 Export Save</button>
+                        <button id="import-save" class="settings-btn">📥 Import Save</button>
+                        <button id="reset-game" class="settings-btn danger">⚠️ Reset Game</button>
+                    </div>
+                    
+                    <!-- UPDATE SECTION -->
+                    <div class="settings-section" style="border: 2px solid #00ffff; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                        <h3 style="color: #00ffff;">🔄 UPDATE GAME</h3>
+                        
+                        <div id="update-info" style="background: rgba(0,255,255,0.1); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                            <p style="margin-bottom: 10px;">
+                                <strong>Versi saat ini:</strong> <span id="current-version">5.0</span>
+                            </p>
+                            <p style="margin-bottom: 10px;">
+                                <strong>Versi terbaru:</strong> <span id="latest-version">5.0</span>
+                            </p>
+                            <p style="margin-bottom: 10px; color: #00ff00;" id="update-status">
+                                ✅ Game sudah versi terbaru
+                            </p>
+                            <div id="update-features" style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                <!-- Fitur baru akan muncul di sini -->
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button id="check-update-btn" class="settings-btn" style="background: #00ffff; color: black; flex: 1;">
+                                🔍 Check Update
+                            </button>
+                            <button id="update-now-btn" class="settings-btn" style="background: #4CAF50; display: none; flex: 1;">
+                                ⬇️ Update Sekarang
+                            </button>
+                            <button id="remind-later-btn" class="settings-btn" style="background: #FFA500; display: none; flex: 1;">
+                                ⏰ Nanti Saja
+                            </button>
+                            <button id="ignore-update-btn" class="settings-btn" style="background: #666; display: none; flex: 1;">
+                                ❌ Abaikan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== DUNGEON MENU (UPDATED with TOKEN EXCHANGE) ==================== -->
+        <div id="dungeon-menu" style="display: none;">
+            <div class="dungeon-header">
+                <h1>⚔️ DUNGEON OF THE DEEP ⚔️</h1>
+                <button id="back-to-main" class="back-btn">◀ KEMBALI KE MEMANCING</button>
+            </div>
+            
+            <!-- Dungeon Stats (UPDATED with TOKEN) -->
+            <div class="dungeon-stats">
+                <div class="stat-card">
+                    <span>⚔️ Ikan Terpilih:</span>
+                    <span id="dungeon-selected-fish">Belum dipilih</span>
+                </div>
+                <div class="stat-card">
+                    <span>🗡️ Attack:</span>
+                    <span id="dungeon-attack">0</span>
+                </div>
+                <div class="stat-card">
+                    <span>🛡️ Defense:</span>
+                    <span id="dungeon-defense">0</span>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(45deg, #FFD700, #FFA500);">
+                    <span>🎫 Secret Token:</span>
+                    <span id="dungeon-tokens">0</span>
+                </div>
+            </div>
+            
+            <!-- Dungeon Navigation Tabs (UPDATED with TOKEN EXCHANGE TAB) -->
+            <nav class="dungeon-tabs">
+                <button class="dungeon-tab active" id="dungeon-char-btn">🐟 Karakter</button>
+                <button class="dungeon-tab" id="dungeon-equip-btn">⚔️ Equipment</button>
+                <button class="dungeon-tab" id="dungeon-shop-btn">🏪 Shop</button>
+                <button class="dungeon-tab" id="dungeon-battle-btn">⚔️ Battle</button>
+                <button class="dungeon-tab" id="dungeon-token-btn">🔄 Token Exchange</button>
+            </nav>
+            
+            <!-- Dungeon Tab Content (UPDATED with TOKEN EXCHANGE PANE) -->
+            <div class="dungeon-content">
+                <!-- Karakter Tab -->
+                <div id="dungeon-character-pane" class="dungeon-pane active">
+                    <div class="dungeon-character-container">
+                        <h3>🐟 Pilih Ikan Secret untuk Bertarung</h3>
+                        <div id="dungeon-character-list" class="dungeon-fish-list">
+                            <!-- Akan diisi JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Equipment Tab -->
+                <div id="dungeon-equip-pane" class="dungeon-pane">
+                    <div class="dungeon-equip-container">
+                        <h3>⚔️ Equipment Ikan</h3>
+                        <p class="info-text">Beli senjata dan armor di shop, lalu equip di sini</p>
+                        
+                        <div class="equipment-slot">
+                            <h4>🗡️ Senjata Terpasang</h4>
+                            <div id="equipped-weapon" class="equipped-item">
+                                <span>Belum ada senjata</span>
+                            </div>
+                        </div>
+                        
+                        <div class="equipment-slot">
+                            <h4>🛡️ Armor Terpasang</h4>
+                            <div id="equipped-armor" class="equipped-item">
+                                <span>Belum ada armor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Tab -->
+                <div id="dungeon-shop-pane" class="dungeon-pane">
+                    <div class="dungeon-shop-container">
+                        <h3>🏪 Dungeon Shop</h3>
+                        
+                        <div class="shop-section">
+                            <h4>🗡️ SENJATA</h4>
+                            <div id="dungeon-weapons" class="dungeon-shop-grid"></div>
+                        </div>
+                        
+                        <div class="shop-section">
+                            <h4>🛡️ ARMOR</h4>
+                            <div id="dungeon-armors" class="dungeon-shop-grid"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Battle Tab -->
+                <div id="dungeon-battle-pane" class="dungeon-pane">
+                    <div class="dungeon-battle-container">
+                        <h3>⚔️ Pilih Level Dungeon</h3>
+                        <div id="dungeon-levels-list" class="dungeon-levels"></div>
+                    </div>
+                </div>
+                
+                <!-- NEW: Token Exchange Tab -->
+                <div id="dungeon-token-pane" class="dungeon-pane">
+                    <div class="dungeon-token-container">
+                        <h3>🎫 Token Exchange</h3>
+                        <p class="info-text">Tukarkan Secret Token-mu dengan hadiah spesial!</p>
+                        
+                        <div style="background: linear-gradient(45deg, #FFD700, #FFA500); padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center;">
+                            <span style="font-size: 1.5rem; font-weight: bold;">Token Kamu: <span id="dungeon-tokens-display">0</span> 🎫</span>
+                        </div>
+                        
+                        <div id="token-exchange-items" class="exchange-items">
+                            <!-- Akan diisi JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="result-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="result-title">Hasil Mancing</h3>
+                <div id="result-content"></div>
+            </div>
+        </div>
+
+        <div id="gacha-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="gacha-title">Hasil Gacha</h3>
+                <div id="gacha-content"></div>
+            </div>
+        </div>
+
+        <div id="exchange-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>🔄 Konfirmasi Exchange</h3>
+                <div id="exchange-content"></div>
+            </div>
+        </div>
+
+        <div id="rank-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>⚔️ Rank Battle</h3>
+                <div id="rank-content"></div>
+            </div>
+        </div>
+
+        <!-- Battle Modal -->
+        <div id="battle-modal" class="modal">
+            <div class="modal-content battle-modal">
+                <span class="close" onclick="document.getElementById('battle-modal').style.display='none'">&times;</span>
+                <div id="battle-content"></div>
+            </div>
+        </div>
+
+        <!-- Modal Update (Otomatis Muncul) -->
+        <div id="update-notification" class="modal" style="display: none;">
+            <div class="modal-content" style="border: 3px solid #00ffff;">
+                <span class="close" onclick="closeUpdateNotif()">&times;</span>
+                <h3 style="color: #00ffff;">🎉 UPDATE TERSEDIA!</h3>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 4rem; margin: 20px;">⬇️</div>
+                    <p style="font-size: 1.2rem; margin-bottom: 15px;">
+                        Versi baru <strong id="notif-version">6.0</strong> telah tersedia!
+                    </p>
+                    <p style="color: #00ff00; margin-bottom: 20px;" id="notif-features">
+                        ✨ Fitur baru: Secret Token & Token Exchange!
+                    </p>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="performUpdate()" style="padding: 10px 20px; background: #4CAF50; border: none; border-radius: 5px; color: white; cursor: pointer;">
+                            ⬇️ Update Sekarang
+                        </button>
+                        <button onclick="remindLater()" style="padding: 10px 20px; background: #FFA500; border: none; border-radius: 5px; color: white; cursor: pointer;">
+                            ⏰ Nanti Saja
+                        </button>
+                        <button onclick="ignoreUpdate()" style="padding: 10px 20px; background: #666; border: none; border-radius: 5px; color: white; cursor: pointer;">
+                            ❌ Abaikan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification System -->
+        <div id="notification-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
