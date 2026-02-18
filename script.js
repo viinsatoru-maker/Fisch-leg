@@ -354,7 +354,7 @@ const rods = [
     { id: 7, name: "Element Rod", luck: 200, price: 0, owned: false, unlocked: false, special: true, emoji: "⚡" },
     { id: 8, name: "Trident Rod", luck: 250, price: 0, owned: false, unlocked: false, special: true, emoji: "🔱" },
     { id: 15, name: "Needle Rod", luck: 300, price: 35000, owned: false, emoji: "🪡" },
-  { id: 200, name: "Airsoft", luck: 800, price: 100, currency: "diamonds", owned: false, emoji: "🔫" },
+  { id: 200, name: "Airsoft", luck: 600, price: 300, currency: "diamonds", owned: false, emoji: "🔫" },
   { id: 88, name: "Fire and Ash", luck: 1000, price: 200000, owned: false, emoji: "🎏" },
     { id: 60, name: "Galaxy Sword Rod", luck: 4004, price: 440044, owned: false, emoji: "⚔️" },
     { id: 100, name: "Tyo Rod", luck: 5000, price: 600000, owned: false, emoji: "👑" },
