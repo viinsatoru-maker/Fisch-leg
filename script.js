@@ -354,12 +354,13 @@ const rods = [
     { id: 7, name: "Element Rod", luck: 200, price: 0, owned: false, unlocked: false, special: true, emoji: "⚡" },
     { id: 8, name: "Trident Rod", luck: 250, price: 0, owned: false, unlocked: false, special: true, emoji: "🔱" },
     { id: 15, name: "Needle Rod", luck: 300, price: 30000, owned: false, emoji: "🪡" },
-    { id: 9, name: "Galaxy Sword Rod", luck: 404, price: 440044, owned: false, emoji: "⚔️" },
-    { id: 10, name: "Tyo Rod", luck: 999, price: 999999, owned: false, emoji: "👑" },
-    { id: 11, name: "1x1x1 Rod", luck: 1111, price: 0, owned: false, unlocked: false, special: true, emoji: "🪬" },
+{ id: 6, name: "Fire and Ash Rod", luck: 1000, price: 100000, owned: false, emoji: "🎏" },
+    { id: 9, name: "Galaxy Sword Rod", luck: 4004, price: 440044, owned: false, emoji: "⚔️" },
+    { id: 10, name: "Tyo Rod", luck: 5999, price: 999999, owned: false, emoji: "👑" },
+    { id: 11, name: "1x1x1 Rod", luck: 6666, price: 0, owned: false, unlocked: false, special: true, emoji: "🪬" },
     { id: 12, name: "GhostFinn Rod", luck: 10000, price: 0, owned: false, fromExchange: false, unlocked: false, emoji: "👻" },
-    { id: 20, name: "Timothy Rod", luck: 15000, price: 500, currency: "diamonds", owned: false, emoji: "⏰" },
-    { id: 14, name: "Satoshi Rod", luck: 20000, price: 0, owned: false, fromExchange: true, unlocked: false, emoji: "₿" }
+    { id: 1000, name: "Timothy Rod", luck: 10000, price: 1111, currency: "diamonds", owned: false, emoji: "⏰" },
+    { id: 14, name: "Satoshi Rod", luck: 15000, price: 0, owned: false, fromExchange: true, unlocked: false, emoji: "₿" }
 ];
 
 const baits = [
