@@ -1,8 +1,8 @@
 // ==================== GAME DATA ====================
 const gameData = {
     version: 5,
-    coins: 500,
-    diamonds: 0,
+    coins: 1000,
+    diamonds: 10,
     exp: 0,
     level: 1,
     currentRod: 0,
