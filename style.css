@@ -1364,3 +1364,426 @@ body {
         font-size: 1.5rem;
     }
 }
+/* ==================== SPOT VALINOR ==================== */
+.spot-btn[data-spot="8"] {
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00);
+    color: #000;
+    font-weight: bold;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 15px #FFD700;
+    animation: valinorPulse 2s infinite;
+}
+
+.spot-btn[data-spot="8"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #FFA500;
+}
+
+.spot-btn[data-spot="8"].active {
+    background: #FFD700;
+    color: #000;
+    border: 2px solid #FFF;
+}
+
+@keyframes valinorPulse {
+    0% { box-shadow: 0 0 5px #FFD700; }
+    50% { box-shadow: 0 0 20px #FFA500, 0 0 30px #FF8C00; }
+    100% { box-shadow: 0 0 5px #FFD700; }
+}
+
+/* Pet Unicorn warning untuk Valinor */
+.unicorn-warning {
+    background: linear-gradient(45deg, #8B4513, #CD853F);
+    color: #FFD700;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #FFD700;
+    animation: warningPulse 1.5s infinite;
+}
+
+@keyframes warningPulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; background: linear-gradient(45deg, #A0522D, #D2691E); }
+    100% { opacity: 0.8; }
+}
+
+/* ==================== NEW PETS STYLING ==================== */
+.pet-card[data-pet="robot"] {
+    border: 2px solid #00FFFF;
+    background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+}
+
+.pet-card[data-pet="robot"]:hover {
+    box-shadow: 0 0 20px #00FFFF;
+}
+
+.pet-card[data-pet="racoon"] {
+    border: 2px solid #8B4513;
+    background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+}
+
+.pet-card[data-pet="racoon"]:hover {
+    box-shadow: 0 0 20px #8B4513;
+}
+
+.pet-card[data-pet="unicorn"] {
+    border: 2px solid #FF69B4;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+    animation: unicornGlow 2s infinite;
+}
+
+.pet-card[data-pet="unicorn"]:hover {
+    box-shadow: 0 0 30px #FF69B4;
+}
+
+@keyframes unicornGlow {
+    0% { border-color: #FF69B4; }
+    50% { border-color: #FFD700; }
+    100% { border-color: #FF69B4; }
+}
+
+.pet-card[data-pet="trex"] {
+    border: 2px solid #FF4500;
+    background: linear-gradient(135deg, #8b0000, #330000);
+}
+
+.pet-card[data-pet="trex"]:hover {
+    box-shadow: 0 0 20px #FF4500;
+}
+
+/* ==================== GACHA ILLUVATAR ==================== */
+#illuvatar-gacha-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00) !important;
+    animation: illuvatarPulse 1.5s infinite;
+    border: 2px solid #FFF !important;
+    font-weight: bold;
+}
+
+@keyframes illuvatarPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); box-shadow: 0 0 30px #FFD700; }
+    100% { transform: scale(1); }
+}
+
+.illuvatar-ticket-count {
+    background: linear-gradient(45deg, #4a00e0, #8e2de2);
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #FFD700;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+    border: 1px solid #FFD700;
+}
+
+/* ==================== SKILL TREE BARU ==================== */
+.skill-card[data-skill="penawar"] {
+    border: 2px solid #FFD700;
+    background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+}
+
+.skill-card[data-skill="penawar"] .upgrade-skill-btn {
+    background: #FFD700 !important;
+    color: #000 !important;
+    font-weight: bold;
+}
+
+.skill-card[data-skill="animalLovers"] {
+    border: 2px solid #00FFFF;
+    background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+    animation: animalLoversGlow 2s infinite;
+}
+
+@keyframes animalLoversGlow {
+    0% { border-color: #00FFFF; }
+    50% { border-color: #FF69B4; }
+    100% { border-color: #00FFFF; }
+}
+
+/* Pet slot indicator */
+.pet-slots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.pet-slot {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 2px dashed #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.pet-slot.active {
+    border: 2px solid #4CAF50;
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.pet-slot.unlocked {
+    border: 2px solid #FFD700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* ==================== DEPTH GEAR CROWN ==================== */
+.depth-gear-crown {
+    border: 2px solid #FFD700 !important;
+    background: rgba(255, 215, 0, 0.1) !important;
+    animation: crownGlow 2s infinite;
+}
+
+@keyframes crownGlow {
+    0% { box-shadow: 0 0 5px #FFD700; }
+    50% { box-shadow: 0 0 20px #FFD700, 0 0 30px #FFA500; }
+    100% { box-shadow: 0 0 5px #FFD700; }
+}
+
+.buy-gear-btn[data-gear="crownOfSilmarillion"] {
+    background: linear-gradient(45deg, #FFD700, #FFA500) !important;
+    color: #000 !important;
+    font-weight: bold;
+}
+
+/* ==================== VALINOR FISH STYLING ==================== */
+.fish-angel-dog {
+    filter: drop-shadow(0 0 10px #FFD700);
+}
+
+.fish-swangod {
+    filter: drop-shadow(0 0 10px #00FFFF);
+}
+
+.fish-birdfeather {
+    filter: drop-shadow(0 0 10px #FF69B4);
+}
+
+.fish-dugong {
+    filter: drop-shadow(0 0 10px #8B4513);
+}
+
+.fish-elvish {
+    filter: drop-shadow(0 0 15px #00FFFF);
+    animation: elvishGlow 2s infinite;
+}
+
+@keyframes elvishGlow {
+    0% { filter: drop-shadow(0 0 5px #00FFFF); }
+    50% { filter: drop-shadow(0 0 20px #00FFFF) drop-shadow(0 0 30px #FFD700); }
+    100% { filter: drop-shadow(0 0 5px #00FFFF); }
+}
+
+.fish-butterfly {
+    filter: drop-shadow(0 0 20px #FF69B4);
+    animation: butterflyFloat 3s infinite;
+}
+
+@keyframes butterflyFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(5deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(5px) rotate(-5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* ==================== TOOLTIPS UNTUK VALINOR ==================== */
+.valinor-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+.valinor-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+    color: #FFD700;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #FFD700;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.valinor-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ==================== ILLUVATAR GACHA RESULTS ==================== */
+.illuvatar-result-pengu {
+    animation: penguWaddle 1s infinite;
+}
+
+@keyframes penguWaddle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.illuvatar-result-batfish {
+    animation: batfly 2s infinite;
+}
+
+@keyframes batfly {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.illuvatar-result-moyai {
+    animation: moyaiFloat 3s infinite;
+}
+
+@keyframes moyaiFloat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); }
+}
+
+.illuvatar-result-trex {
+    animation: trexRoar 1.5s infinite;
+}
+
+@keyframes trexRoar {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2) rotate(5deg); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.2) rotate(-5deg); }
+    100% { transform: scale(1); }
+}
+
+/* ==================== PENAWAR SKILL BONUS ==================== */
+.penawar-badge {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.sell-price-bonus {
+    color: #4CAF50;
+    font-weight: bold;
+    animation: bonusPulse 1s infinite;
+}
+
+@keyframes bonusPulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 10px #4CAF50; }
+    100% { opacity: 0.8; }
+}
+
+/* ==================== ROBOT PET ANIMATION ==================== */
+.robot-active {
+    animation: robotSpin 2s infinite;
+}
+
+@keyframes robotSpin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.robot-catch-notification {
+    background: linear-gradient(45deg, #00FFFF, #4CAF50);
+    color: #000;
+    font-weight: bold;
+    border-left: 4px solid #00FFFF;
+}
+
+/* ==================== RACCOON PET ANIMATION ==================== */
+.racoon-active {
+    animation: racoonTwitch 1.5s infinite;
+}
+
+@keyframes racoonTwitch {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1) translateX(5px); }
+    75% { transform: scale(1.1) translateX(-5px); }
+    100% { transform: scale(1); }
+}
+
+.double-catch-effect {
+    animation: doubleFlash 0.5s;
+}
+
+@keyframes doubleFlash {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ==================== UNICORN PET ANIMATION ==================== */
+.unicorn-active {
+    animation: unicornSparkle 2s infinite;
+}
+
+@keyframes unicornSparkle {
+    0% { filter: drop-shadow(0 0 5px #FF69B4); }
+    50% { filter: drop-shadow(0 0 20px #FF69B4) drop-shadow(0 0 30px #FFD700); }
+    100% { filter: drop-shadow(0 0 5px #FF69B4); }
+}
+
+/* ==================== T-REX PET ANIMATION ==================== */
+.trex-active {
+    animation: trexStomp 1s infinite;
+}
+
+@keyframes trexStomp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.rank-battle-trex-bonus {
+    color: #FF4500;
+    font-weight: bold;
+    animation: trexBonusPulse 1s infinite;
+}
+
+@keyframes trexBonusPulse {
+    0% { text-shadow: 0 0 5px #FF4500; }
+    50% { text-shadow: 0 0 20px #FF4500; }
+    100% { text-shadow: 0 0 5px #FF4500; }
+}
+
+/* ==================== RESPONSIVE UNTUK VALINOR ==================== */
+@media (max-width: 768px) {
+    .spot-btn[data-spot="8"] {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .valinor-tooltip .tooltip-text {
+        width: 150px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .spot-btn[data-spot="8"] {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
