@@ -121,7 +121,7 @@ const gameData = {
 
 // ==================== VERSION CONTROL ====================
 const GAME_VERSIONS = {
-    current: 5,
+    current: 6,
     latest: 6,
     releaseDate: "2024-02-21",
     features: {
