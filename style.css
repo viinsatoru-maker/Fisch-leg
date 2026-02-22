@@ -1787,3 +1787,77 @@ body {
         padding: 4px 8px;
     }
 }
+/* ==================== IKAN SPESIAL RGB ==================== */
+.item-card[data-rarity="special"] .fish-emoji,
+.fish-special {
+    animation: rgbPulse 3s infinite;
+    text-shadow: 0 0 10px currentColor;
+}
+
+@keyframes rgbPulse {
+    0% { color: #ff0000; text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+    17% { color: #ff8800; text-shadow: 0 0 10px #ff8800, 0 0 20px #ff8800; }
+    33% { color: #ffff00; text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00; }
+    50% { color: #00ff00; text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; }
+    67% { color: #0088ff; text-shadow: 0 0 10px #0088ff, 0 0 20px #0088ff; }
+    83% { color: #8800ff; text-shadow: 0 0 10px #8800ff, 0 0 20px #8800ff; }
+    100% { color: #ff0000; text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+}
+
+/* RGB untuk setiap ikan special */
+.fish-neptunus {
+    animation: rgbPulse 3s infinite;
+    filter: drop-shadow(0 0 15px gold);
+}
+
+.fish-butterfly {
+    animation: rgbButterfly 4s infinite;
+}
+
+@keyframes rgbButterfly {
+    0% { color: #ff69b4; text-shadow: 0 0 10px #ff69b4; transform: rotate(0deg); }
+    33% { color: #00ffff; text-shadow: 0 0 10px #00ffff; transform: rotate(5deg); }
+    66% { color: #ffff00; text-shadow: 0 0 10px #ffff00; transform: rotate(-5deg); }
+    100% { color: #ff69b4; text-shadow: 0 0 10px #ff69b4; transform: rotate(0deg); }
+}
+
+.fish-trex {
+    animation: rgbTrex 2s infinite;
+}
+
+@keyframes rgbTrex {
+    0% { color: #ff4500; text-shadow: 0 0 10px #ff4500; transform: scale(1); }
+    25% { color: #ff0000; text-shadow: 0 0 20px #ff0000; transform: scale(1.1); }
+    50% { color: #ff8c00; text-shadow: 0 0 10px #ff8c00; transform: scale(1); }
+    75% { color: #ff4500; text-shadow: 0 0 20px #ff4500; transform: scale(1.1); }
+    100% { color: #ff4500; text-shadow: 0 0 10px #ff4500; transform: scale(1); }
+}
+
+/* Efek RGB di backpack */
+#backpack-items .item-card[data-rarity="special"] {
+    border-left: 5px solid;
+    animation: rgbBorder 3s infinite;
+}
+
+@keyframes rgbBorder {
+    0% { border-left-color: #ff0000; }
+    17% { border-left-color: #ff8800; }
+    33% { border-left-color: #ffff00; }
+    50% { border-left-color: #00ff00; }
+    67% { border-left-color: #0088ff; }
+    83% { border-left-color: #8800ff; }
+    100% { border-left-color: #ff0000; }
+}
+
+/* Efek glow di aquarium */
+#special-tank .fish-in-tank[data-fish="neptunus"] {
+    animation: rgbGlow 2s infinite;
+}
+
+@keyframes rgbGlow {
+    0% { filter: drop-shadow(0 0 5px #ff0000); }
+    25% { filter: drop-shadow(0 0 15px #00ff00); }
+    50% { filter: drop-shadow(0 0 5px #0000ff); }
+    75% { filter: drop-shadow(0 0 15px #ffff00); }
+    100% { filter: drop-shadow(0 0 5px #ff0000); }
+}
