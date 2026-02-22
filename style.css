@@ -1861,3 +1861,516 @@ body {
     75% { filter: drop-shadow(0 0 15px #ffff00); }
     100% { filter: drop-shadow(0 0 5px #ff0000); }
 }
+/* ==================== MINING STYLES ==================== */
+
+/* Mining Navigation Button */
+.mining-nav-btn {
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    border: 2px solid #D2691E;
+}
+
+.mining-nav-btn:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.5);
+}
+
+.mining-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #666;
+    border-color: #444;
+}
+
+/* Mining Menu */
+#mining-menu {
+    background: linear-gradient(135deg, #2C1810, #4A2C1A, #2C1810);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.mining-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 15px;
+    border: 2px solid #8B4513;
+}
+
+.mining-header h1 {
+    color: #D2691E;
+    text-shadow: 0 0 10px rgba(210, 105, 30, 0.5);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* Mining Stats */
+.mining-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.mining-stats .stat-card {
+    background: linear-gradient(135deg, rgba(139,69,19,0.3), rgba(210,105,30,0.3));
+    border: 2px solid #8B4513;
+    border-radius: 10px;
+    padding: 15px 25px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.mining-stats .stat-card span:first-child {
+    color: #D2691E;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.mining-stats .stat-card span:last-child {
+    color: #FFD700;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Mining Tabs */
+.mining-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.mining-tab {
+    background: rgba(139,69,19,0.3);
+    color: white;
+    border: 2px solid #8B4513;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.mining-tab:hover {
+    background: rgba(210,105,30,0.5);
+    transform: translateY(-2px);
+}
+
+.mining-tab.active {
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    border-color: #FFD700;
+    box-shadow: 0 0 15px rgba(210,105,30,0.5);
+}
+
+/* Mining Panes */
+.mining-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.mining-pane.active {
+    display: block;
+}
+
+/* Mining Main Content */
+.mining-main-content {
+    background: rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #8B4513;
+}
+
+#mining-rock {
+    cursor: pointer;
+    transition: transform 0.1s;
+    user-select: none;
+}
+
+#mining-rock:active {
+    transform: scale(0.95);
+}
+
+/* Mining Shop Grid */
+.mining-shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.mining-shop-grid .item-card {
+    background: rgba(139,69,19,0.2);
+    border: 2px solid #8B4513;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.mining-shop-grid .item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(210,105,30,0.3);
+    border-color: #D2691E;
+}
+
+/* Mining Skill Grid */
+.mining-skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.mining-skill-grid .skill-card {
+    background: rgba(139,69,19,0.2);
+    border: 2px solid #8B4513;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    transition: all 0.3s;
+}
+
+.mining-skill-grid .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(210,105,30,0.3);
+    border-color: #D2691E;
+}
+
+/* Mining Minigame */
+#mining-minigame-indicator {
+    background: rgba(139,69,19,0.3);
+    border: 2px solid #D2691E;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#mining-needle {
+    width: 4px;
+    height: 100%;
+    background: #FFD700;
+    position: absolute;
+    left: 0;
+    animation: needleSweep 1s infinite linear;
+    box-shadow: 0 0 10px #FFD700;
+}
+
+/* Mining Exchange */
+.mining-exchange-container .exchange-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.mining-exchange-container .exchange-card {
+    background: rgba(139,69,19,0.2);
+    border: 2px solid #8B4513;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.mining-exchange-container .exchange-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(210,105,30,0.3);
+    border-color: #D2691E;
+}
+
+/* Mining Result Modal */
+#mining-result-modal .modal-content {
+    background: linear-gradient(135deg, #2C1810, #4A2C1A);
+    border: 3px solid #D2691E;
+}
+
+#mining-result-modal h3 {
+    color: #D2691E;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(210,105,30,0.5);
+}
+
+/* Mining Back Button */
+#back-to-main-from-mining {
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid #D2691E;
+}
+
+#back-to-main-from-mining:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(210,105,30,0.5);
+}
+
+/* Mining Tool Buttons */
+.buy-tool-btn, .equip-tool-btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.buy-tool-btn {
+    background: #4CAF50;
+}
+
+.buy-tool-btn:hover:not(:disabled) {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.equip-tool-btn {
+    background: #4CAF50;
+}
+
+.equip-tool-btn:hover:not(:disabled) {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.equip-tool-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+/* Mining Skill Upgrade Buttons */
+.upgrade-mining-skill-btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    background: #4CAF50;
+}
+
+.upgrade-mining-skill-btn:hover:not(:disabled) {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.upgrade-mining-skill-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+/* Mining Stats Display */
+.mining-stats-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.mining-stat-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.mining-stat-item .label {
+    color: #D2691E;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.mining-stat-item .value {
+    color: #FFD700;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Mining Tool Info */
+.mining-tool-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(139,69,19,0.2);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.mining-tool-info .tool-emoji {
+    font-size: 2rem;
+}
+
+.mining-tool-info .tool-details {
+    flex: 1;
+}
+
+.mining-tool-info .tool-name {
+    color: white;
+    font-weight: bold;
+}
+
+.mining-tool-info .tool-luck {
+    color: #00ffff;
+    font-size: 0.9rem;
+}
+
+/* Mining Perfect Cut Badge */
+.perfect-cut-badge {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Mining Rock Animation */
+@keyframes mining-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.mining-active #mining-rock {
+    animation: mining-pulse 1s infinite;
+}
+
+/* Responsive Design untuk Mining */
+@media (max-width: 768px) {
+    .mining-stats {
+        flex-direction: column;
+    }
+    
+    .mining-stats .stat-card {
+        width: 100%;
+    }
+    
+    .mining-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .mining-tab {
+        flex: 1 1 calc(50% - 10px);
+        text-align: center;
+    }
+    
+    .mining-shop-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mining-exchange-container .exchange-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .mining-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mining-tab {
+        flex: 1 1 100%;
+    }
+    
+    .mining-skill-grid .skill-card {
+        width: 100%;
+    }
+    
+    .mining-stats .stat-card span:last-child {
+        font-size: 1.2rem;
+    }
+}
+
+/* Dark Mode Support untuk Mining */
+@media (prefers-color-scheme: dark) {
+    .mining-header {
+        background: rgba(0,0,0,0.7);
+    }
+    
+    .mining-main-content {
+        background: rgba(0,0,0,0.7);
+    }
+}
+
+/* Mining Loading Animation */
+.mining-loading {
+    text-align: center;
+    padding: 50px;
+}
+
+.mining-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #8B4513;
+    border-top-color: #D2691E;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Mining Success Animation */
+@keyframes mining-success {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #FFD700; }
+    100% { transform: scale(1); }
+}
+
+.mining-success {
+    animation: mining-success 0.5s ease;
+}
+
+/* Mining Tooltips */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    display: none;
+    z-index: 1000;
+}
+
+[data-tooltip]:hover:before {
+    display: block;
+}
